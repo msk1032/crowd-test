@@ -1,0 +1,19 @@
+server:
+  port: 9001
+  servlet:
+    context-path: /study
+spring:
+  application:
+    name: springcloud-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka
+zuul:
+  ignored-services: "*" #设置忽略微服务名称
+  prefix: /msk10032     #设置访问前缀
+  routes:
+    employee: # 自定义路由规则的名称，在底层的数据结构中是 Map 的键
+      serviceId: springcloud-06-feign-consumer # 目标微服务名称，ZuulRoute 类型的一个属性
+      path: /zuul-emp/** # 用来代替目标微服务名称的路径，
+      # /**表示匹配多层路径，如果没有加/**则不能匹配后续的多层路径了

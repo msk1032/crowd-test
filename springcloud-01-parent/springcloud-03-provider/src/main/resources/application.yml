@@ -1,0 +1,14 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: org.studyhub.springcloud.spring-03-provider #指定当前微服务的名称
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:5000/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream

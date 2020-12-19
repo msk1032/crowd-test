@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+        <p th:text="经过服务器显示的内容">这是直接可以在浏览器查看的内容</p>
+
+        <h4>遍历元素</h4>
+<!--           th:each 出现在哪个标签里 那个标签就开始循环-->
+        <div th:each="str :${list}" >
+<!--            strStat是状态变量，有 index,count,size,current,even,odd,first,last等属性，如果没有显示设置状态变量，thymeleaf会默 认给个“变量名+Stat"的状态变量。-->
+            <p th:text="${strStat.index+1}"></p>
+            <p th:text="${str}"></p>
+        </div>
+</body>
+</html>

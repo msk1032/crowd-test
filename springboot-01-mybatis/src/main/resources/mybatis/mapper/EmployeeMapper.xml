@@ -1,0 +1,13 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.studyhub.springboot.mybatis.mapper.EmployeeMapper">
+<!--    <select id="getAllEmp" resultType="org.studyhub.springboot.mybatis.entity.Employee">-->
+<!--        select `emp_id` empId,`emp_name` empName, `emp_age` empAge from `t_employee`;-->
+<!--    </select>-->
+
+    <select id="getAllEmp" resultType="org.studyhub.springboot.mybatis.entity.Employee">
+        select * from `t_employee`;
+    </select>
+</mapper>
